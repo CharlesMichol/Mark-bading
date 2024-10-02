@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect</title>
+    <style>
+        #output {
+            font-size: 24px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div id="output"></div>
+
+    <script>
+        const text = "I love you mark ♥";
+        let index = 0;
+        const speed = 500; // speed in milliseconds
+
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("output").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeText, speed);
+            }
+        }
+
+        window.onload = typeText;
+    </script>
+</body>
+</html>
